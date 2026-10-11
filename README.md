@@ -1,7 +1,5 @@
 # Shenaniganry
-A quick and easy way to make posts to a static HTML website.  
-
-Whoah!  You've found the README file, and even bothered to read it!
+A quick and easy way to make posts to a static HTML website.  Thanks for actually reading the README file!  
 
 This project is pretty simple.  It is a static HTML generator serving a number of easy-to-write posts (with pseudo-markdown, saved as txt files).
 The main functionality is provided by a bash script (posts.sh), meant to be re-generated periodically.  A script called add_new.sh will help you create a new post and publish them to the website.  A symlink of this script lives in /bin/addpost.  
@@ -28,6 +26,6 @@ Namely, it supports
 
 I'd recommend having a title with `#`, and signing off with your name, or a nickname if you so desire).  The script will automatically publish the account name of the owner of the txt file at the bottom of each post on the website.  
 
-The script will add the newest post to the top of the 
+The script will add the newest post to the top of the static HTML file.  
 
 This site is presently hosted at http://shenaniganry.cif.rochester.edu/ and the files are located at /var/www/posts on Korvax.  
