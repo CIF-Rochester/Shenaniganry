@@ -5,8 +5,10 @@ BASE_DIR="/var/www/posts"
 POSTS_DIR="$BASE_DIR/posts"
 GENERATOR="$BASE_DIR/posts.sh"
 ADD_POST="$BASE_DIR/add_new.sh"
+EDIT_POST="$BASE_DIR/edit_post.sh"
 VHOST="/etc/apache2/sites-available/shenaniganry.conf"
 ADDPOST_LINK="/bin/addpost"
+EDITPOST_LINK="/bin/addpost"
 
 if [[ $EUID -ne 0 ]]; then
     echo "ERROR: Run this installer as root." >&2
@@ -52,8 +54,9 @@ EOF
 echo "Enable our new Vhost"
 a2ensite shenaniganry.conf
 
-echo "creating the /bin/addpost command. "
+echo "creating the /bin/addpost & /bin/editpost command. "
 ln -s "$ADD_POST" "$ADDPOST_LINK"
+ln -s "$EDIT_POST" "$EDITPOST_LINK"
 
 #This is probably best practice.  I could just chmod 777 everything.  /shrug
 find "$BASE_DIR" -type d -exec chmod 755 {} +
